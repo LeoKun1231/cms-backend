@@ -45,6 +45,7 @@ model User{
   userRole UserRole[] 
 
   @@index([departmentId])
+  @@map("user")
 }
 
 
@@ -70,6 +71,8 @@ model Role{
 
   ///角色下的菜单
   roleMenu RoleMenu[]
+
+  @@map("role")
 }
 
 
@@ -100,6 +103,8 @@ model Department {
 
   ///部门下的用户
   user User[]
+
+  @@map("department")
 }
 
 
@@ -135,6 +140,8 @@ model Menu{
 
   ///菜单下的角色
   roleMenu RoleMenu[]
+
+  @@map("menu")
 }
 
 
@@ -252,4 +259,6 @@ model Story{
 
   ///故事更新时间
   updateAt DateTime @updatedAt
+
+  @@map("story")
 }
